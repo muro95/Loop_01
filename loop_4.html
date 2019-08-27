@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<form name=f1>
+    Computations: <input type=text size=4 name="n">
+    <input type=button value="Compute" onClick="show(f1.n.value);">
+    <input type=reset value="Reset"><br>
+    Sequence: <input type=text size="70" name="s">
+</form>
+</body>
+<SCRIPT>
+    function f(n) {
+        var s = 0;
+        if(n == 0) return(s);
+        if(n == 1) {
+            s += 1;
+            return(s);
+        }
+        else {
+            return(f(n - 1) + f(n - 2));
+        }
+    }
+    function show(n) {
+        var i;
+        for(i = 0; i <= n; i++) {
+            if (f(i) %5 ==0) {
+                f1.s.value += "  " + f(i);
+            }
+        }
+    }
+
+</script>
+</html>
